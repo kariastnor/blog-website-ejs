@@ -1,5 +1,5 @@
 //jshint esversion:6
-require("dotenv").config();
+// require("dotenv").config();
 const express = require("express");
 const ejs = require("ejs");
 const _ = require("lodash");
@@ -19,8 +19,7 @@ app.set("view engine", "ejs");
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
-mongoose.connect(process.env.MONGO_CLUSTER);
-// console.log(typeof process.env.MONGO_CLUSTER);
+mongoose.connect(process.env.MONGODB_URI);
 
 const blogSchema = new mongoose.Schema({
   title: String,
