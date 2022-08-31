@@ -20,7 +20,7 @@ app.set("view engine", "ejs");
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
-mongoose.connect(process.env.MONGO_CLUSTER);
+mongoose.connect(string(process.env.MONGO_CLUSTER));
 
 const blogSchema = new mongoose.Schema({
   title: String,
