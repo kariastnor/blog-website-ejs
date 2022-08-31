@@ -62,12 +62,6 @@ app.post("/compose", function (req, res) {
     res.redirect("/");
   }
   saveAndRedirect();
-  // Original code:
-  //   post.save(function(err){
-  //     if (!err) {
-  //       res.redirect("/");
-  //     }
-  //   });
 });
 
 // Use a parameter for the specific post (rather than creating a different url for each individual post)
@@ -79,12 +73,6 @@ app.get("/posts/:postID", function (req, res) {
       res.render("post", { post: post });
     }
   });
-
-  // posts.forEach(post => {
-  //   if (postParam === _.lowerCase(post.title)) {
-  //     res.render("post", {post: post});
-  //   }
-  // });
 });
 
 app.listen(3000, function () {
